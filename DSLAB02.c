@@ -11,7 +11,7 @@ use Built-in functions.
 */
 
 #include<stdio.h>
-#include<stdlib.h
+#include<stdlib.h>
 char str[100],pat[20],rep[20];
 int i,j,found=0,k,pos;
 int slen=0,plen=0,rlen=0;
@@ -56,8 +56,14 @@ while(str[i]!='\0')
 			}
 		else
 			{
+				if(str[i]==pat[0])
+				break;
+
+				else
+				{		
 				i++;
 				break;
+				}
 			}
 		}	
 	
@@ -81,3 +87,31 @@ printf("\nString after replacement= %s\n",str);
 else
 printf("\npattern string not found\n");
 }
+
+
+/* OUTPUT1:
+
+enter main string :mit is in mysore, mit is good  
+enter pattern string:mit
+enter replace string:MIT
+
+main string is:mit is in mysore, mit is good
+pattern string is:mit
+replace string is:MIT
+pattern string found
+
+String after replacement= MIT is in mysore, MIT is good
+-----------------------------------------------------------
+OUTPUT2:
+
+enter main string :ABCDABCDEF ABC ABC ABC ABABC AABC AAAABCCCC
+enter pattern string:ABC
+enter replace string:xyz
+
+main string is:ABCDABCDEF ABC ABC ABC ABABC AABC AAAABCCCC
+pattern string is:ABC
+replace string is:xyz
+pattern string found
+
+String after replacement= xyzDxyzDEF xyz xyz xyz ABxyz Axyz AAAxyzCCC
+*/
