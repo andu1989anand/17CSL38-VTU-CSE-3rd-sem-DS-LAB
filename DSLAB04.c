@@ -30,7 +30,7 @@ int pr(char elem)
     case '-': return 2;
     case '*':
     case '/': return 3;
-    case '$':
+    case '%':
     case '^': return 4;
     }
 }
